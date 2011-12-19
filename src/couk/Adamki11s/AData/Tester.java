@@ -16,8 +16,10 @@ public class Tester {
 			data.addComment("Comment1");
 			data.addNewLine();
 			data.addComment("Comment2");
+			//writes the contents of the map to the file
 			data.writeData();
 		} else {
+			//loads the data into hashmap
 			data.readData();
 			System.out.println(data.getString("Test"));
 			System.out.println(data.getInt("Test2"));
