@@ -11,11 +11,11 @@ public class Tester {
 		AData data = new AData(new File("C:" + File.separator + "Test" + File.separator + "ADATA.dat"));
 		if (!data.doesFileExist()) {
 			data.createFile();
-			data.addData("Test", "LOLOLO");
+			data.addData("Test", "Testing");
 			data.addData("Test2", 56);
-			data.addComment("FAGGttOT");
+			data.addComment("Comment1");
 			data.addNewLine();
-			data.addComment("LOOOL");
+			data.addComment("Comment2");
 			data.writeData();
 		} else {
 			data.readData();
