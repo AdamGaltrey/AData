@@ -17,14 +17,13 @@ data.createNewFile();
 AData supports all standard data types : Strings, ints, doubles etc. Do not try and parse arrays and arraylists unless you have formatted them into a single String. I plan to add support for these later.
 
 AData also supports Bukkit Location data types and I am looking to add more support for Bukkit data types.
-To save location data you need to create a LocationData() object. This is very simple, all you have to do is :
+To save location data you simply need to pass in a Location object.
 
 Location l = yourlocation;
-LocationData lData = new LocationData(l);
 
 **You can then add this location to the data to be written to the file by the addData(String key, Object value) method.
 
-data.addData("MyLocation", lData);
+data.addData("MyLocation", l);
 
 **In Addition to this AData also supports comments and forced line breaks. Furthermore it stores your keys in a linked HashMap so your data will be written out in the order you put it in! Useless if you have a big config and want to order it alphabetically.
 
