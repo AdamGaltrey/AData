@@ -1,0 +1,49 @@
+AData (AdvancedData) Documentation: 
+-----------------------------------
+
+TODO: Add Support to modify keys.
+
+Constructor:
+------------
+***How to instantiate an AData class.
+
+AData data = new ADate(new File("plugins" + File.separator + "EG"));
+
+***AData can even create the file for you, it will automatically check if it already exists or not.
+
+data.createNewFile();
+
+**Adding Data
+AData supports all standard data types : Strings, ints, doubles etc. Do not try and parse arrays and arraylists unless you have formatted them into a single String. I plan to add support for these later.
+
+AData also supports Bukkit Location data types and I am looking to add more support for Bukkit data types.
+To save location data you need to create a LocationData() object. This is very simple, all you have to do is :
+
+Location l = yourlocation;
+LocationData lData = new LocationData(l);
+
+**You can then add this location to the data to be written to the file by the addData(String key, Object value) method.
+
+data.addData("MyLocation", lData);
+
+**In Addition to this AData also supports comments and forced line breaks. Furthermore it stores your keys in a linked HashMap so your data will be written out in the order you put it in! Useless if you have a big config and want to order it alphabetically.
+
+data.addComment("MyComment");
+
+data.addNewLine();
+
+**Then to write the data to the file simply call the writeData() method.
+
+data.writeData();
+
+**Similary data can be read easily. Using the AData class we created above you first need to load the data into memory by readData();
+
+data.readData();
+
+**You can then grab your locations, ints, Strings and what not as if you were using Bukkits Configuration file.
+
+data.getObject("MyObject");
+data.getString("YourKey");
+data.getInt("MyInt");
+data.getDouble("MyDouble);
+data.getLocation("MyLocation");
