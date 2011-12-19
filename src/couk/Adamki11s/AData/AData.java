@@ -65,8 +65,8 @@ public class AData {
 	
 	public Location getLocation(String key){
 		if(this.readableKeys.containsKey(key)){
-			if(this.readableKeys.get(key) instanceof LocationData){
-				return ((LocationData)this.readableKeys.get(key)).lData;
+			if(this.readableKeys.get(key) instanceof Location){
+				return ((Location)this.readableKeys.get(key));
 			}
 		}
 		return null;

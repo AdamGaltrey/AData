@@ -37,10 +37,10 @@ public class IOStream {
 					fbw.newLine();
 					newLineWritten = true;
 				} else {
-					if (entry.getValue() instanceof LocationData) {
-						LocationData ld = (LocationData) entry.getValue();
-						fbw.write(entry.getKey().trim() + ":" + ld.lData.getWorld().getName() + "," + ld.lData.getX() + "," + ld.lData.getY() + ","
-								+ ld.lData.getZ());
+					if (entry.getValue() instanceof Location) {
+						Location ld = (Location) entry.getValue();
+						fbw.write(entry.getKey().trim() + ":" + ld.getWorld().getName() + "," + ld.getX() + "," + ld.getY() + ","
+								+ ld.getZ());
 					} else {
 						fbw.write(entry.getKey().trim() + ":" + entry.getValue().toString().trim());
 					}
@@ -71,7 +71,7 @@ public class IOStream {
 						x = Double.parseDouble(locs[1]);
 						y = Double.parseDouble(locs[2]);
 						z = Double.parseDouble(locs[3]);
-						tempKeys.put(prop[0], new LocationData(new Location(w, x, y, z)));
+						tempKeys.put(prop[0], new Location(w, x, y, z));
 					} else if (strLine.contains(":") && strLine != null && !strLine.contains("#")) {
 						String[] property = strLine.split(":");
 						tempKeys.put(property[0], property[1]);
